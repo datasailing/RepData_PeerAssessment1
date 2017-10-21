@@ -33,7 +33,7 @@ options(scipen=999)
 ```
 ## Loading and preprocessing the data
 
-```{r loading and preprocessing data}
+```{r loading_and_preprocessing_data}
 ## reading and processing data to obtain date and time in appropriate format
 
 ## reading data
@@ -54,7 +54,7 @@ d$dt <- as.POSIXct(datetime, format = "%d/%m/%Y %H:%M")
 ## What is mean total number of steps taken per day?
 
 1. Making a histogram
-```{r histogram 1}
+```{r histogram1}
 ## What is mean total number of steps taken per day?
 ## remove NA for this part of the assignment
 dd <- d[complete.cases(d),]
@@ -87,7 +87,7 @@ avgstepsinterval <- aggregate(steps ~ interval, dd, mean)
 names(avgstepsinterval)[2] <- "avgsteps"
 ```
 1. Plot of average steps taken per interval
-```{r time series 1}
+```{r timeseries1}
 ## 1. plot of average steps taken per interval
 plot(avgstepsinterval$interval, avgstepsinterval$avgsteps, type = "l",
      main="Average number of steps per Interval", xlab="Intervals", 
@@ -157,7 +157,7 @@ head(d)
 stepsday <- aggregate(steps ~ date, d, sum)
 ```
 
-```{r histogram 2}
+```{r histogram2}
 ## Plot histogram of number of steps per day
 hist(stepsday$steps, main = "Total number of steps per day", 
      xlab = "Steps per day", breaks = 10,col = "gray")
@@ -215,7 +215,7 @@ avgstepsinterval <- aggregate(steps ~ interval + weekday, d, mean)
 names(avgstepsinterval)[3] <- "avgsteps"
 ```
 
-```{r time series 2}
+```{r timeseries2}
 g <- ggplot(avgstepsinterval, aes(interval, avgsteps)) +
     geom_line( aes(colour = weekday)) +
     facet_grid(weekday ~ ., scales="fixed", space="fixed") +

@@ -41,7 +41,7 @@ stepsday <- aggregate(steps ~ date, dd, sum)
 hist(stepsday$steps, main = "Total number of steps per day", xlab = "Steps per day", breaks = 10,col = "gray")
 ```
 
-![](PA1_files/figure-html/histogram 1-1.png)<!-- -->
+![](PA1_files/figure-html/histogram1-1.png)<!-- -->
 
 
 ```r
@@ -87,7 +87,7 @@ plot(avgstepsinterval$interval, avgstepsinterval$avgsteps, type = "l",
      ylab="Average number of steps")
 ```
 
-![](PA1_files/figure-html/time series 1-1.png)<!-- -->
+![](PA1_files/figure-html/timeseries1-1.png)<!-- -->
 
 2. Which 5-minute interval, on average across all the days in the dataset, 
 contains the maximum number of steps?
@@ -174,7 +174,7 @@ hist(stepsday$steps, main = "Total number of steps per day",
      xlab = "Steps per day", breaks = 10,col = "gray")
 ```
 
-![](PA1_files/figure-html/histogram 2-1.png)<!-- -->
+![](PA1_files/figure-html/histogram2-1.png)<!-- -->
 
 Mean and median of thetotal number of steps taken per day
 
@@ -254,7 +254,7 @@ g <- ggplot(avgstepsinterval, aes(interval, avgsteps)) +
 print(g)
 ```
 
-![](PA1_files/figure-html/time series 2-1.png)<!-- -->
+![](PA1_files/figure-html/timeseries2-1.png)<!-- -->
 
 There are small differences to weekday and weekend average number of steps. 
 During weekends the average is more evenly spread though the day, with a milder peak
